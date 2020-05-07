@@ -17,12 +17,27 @@ class CategorySpinnerAdapter(val mContext: Context, val resId:Int, val mList:Arr
         tempRow?.let {
 
         }.let {
-            tempRow = inf.inflate(R.layout.pizza_store_item, null)
+            tempRow = inf.inflate(R.layout.category_list_item, null)
         }
 
         val row = tempRow!!
 
         return row
     }
+
+
+    override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup): View {
+        var tempRow = convertView
+        tempRow?.let {
+
+        }.let {
+            tempRow = inf.inflate(R.layout.category_list_item, null)
+        }
+
+        val row = tempRow!!
+
+        return row
+    }
+
 
 }
