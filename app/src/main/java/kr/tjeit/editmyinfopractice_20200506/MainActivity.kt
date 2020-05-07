@@ -72,7 +72,20 @@ class MainActivity : BaseActivity() {
 
                         signUpDateTxt.text = printSdf.format(userObj.createdAt.time)
 
+//                        실제로 사용중인 카테고리 선택
 
+//                        userObj.category => 스피너에서 몇번째 칸인가?
+//                        categoryList 안에서, userObj.category는 몇번째에 위치?
+
+                        val index = categoryList.indexOf(userObj.category)
+
+                        Log.d("목록에서의위치", "${index}")
+
+//                        스피너의 칸에 맞는 아이템 선택
+                        categorySpinner.setSelection(index)
+
+//                        카테고리가 총 몇개?
+                        Log.d("카테고리갯수", "${categoryList.size}")
 
 
                     }
