@@ -1,10 +1,13 @@
 package kr.tjeit.editmyinfopractice_20200506.adapters
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageView
+import android.widget.TextView
 import kr.tjeit.editmyinfopractice_20200506.R
 import kr.tjeit.editmyinfopractice_20200506.datas.Category
 
@@ -22,6 +25,16 @@ class CategorySpinnerAdapter(val mContext: Context, val resId:Int, val mList:Arr
 
         val row = tempRow!!
 
+        val colorImg = row.findViewById<ImageView>(R.id.colorImg)
+        val titleTxt = row.findViewById<TextView>(R.id.titleTxt)
+
+        val data = mList.get(position)
+
+        titleTxt.text = data.title
+
+        colorImg.setBackgroundColor(Color.parseColor(data.color))
+
+
         return row
     }
 
@@ -35,6 +48,15 @@ class CategorySpinnerAdapter(val mContext: Context, val resId:Int, val mList:Arr
         }
 
         val row = tempRow!!
+
+        val colorImg = row.findViewById<ImageView>(R.id.colorImg)
+        val titleTxt = row.findViewById<TextView>(R.id.titleTxt)
+
+        val data = mList.get(position)
+
+        titleTxt.text = data.title
+
+        colorImg.setBackgroundColor(Color.parseColor(data.color))
 
         return row
     }
